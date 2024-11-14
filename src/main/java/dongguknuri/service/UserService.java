@@ -49,7 +49,7 @@ public class UserService {
             String jwt = jwtTokenService.generateToken(user.getEmail());
             return JwtResponseDto.builder()
                     .jwt(jwt)
-                    .name(user.getName())
+                    .name(user.getEmail())
                     .build();
         }
         return JwtResponseDto.builder()
