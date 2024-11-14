@@ -33,13 +33,9 @@ public class PointHistory {
     @Column(name = "points", nullable = false)
     private int points;
 
-    @Column(name = "reason")
-    private String reason;
-
     @Builder
-    public PointHistory(User user, int points, String reason) {
+    public PointHistory(User user, int points) {
         this.user = user;
         this.points = points;
-        this.reason = reason;
     }
 }
