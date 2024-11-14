@@ -1,6 +1,6 @@
 package dongguknuri.domain.course;
 
-import dongguknuri.domain.Department;
+import dongguknuri.domain.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -11,6 +11,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -36,24 +38,28 @@ public class Course {
     @Column(name = "professor")
     private String professor;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "department_id")
-    private Department department;
+    @Column(name = "day")
+    private String day; //월화수목금
 
     @Column(name = "start_time")
-    private LocalDate startTime;
+    private LocalTime startTime;
 
     @Column(name = "end_time")
-    private LocalDate endTime;
+    private LocalTime endTime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Builder
-    public Course(String name, String description, String professor, Department department,
-                  LocalDate startTime, LocalDate endTime) {
+    public Course(String name, String description, String professor, String day,
+                  LocalTime startTime, LocalTime endTime, User user) {
         this.name = name;
         this.description = description;
         this.professor = professor;
-        this.department = department;
+        this.day = day;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.user = user;
     }
 }

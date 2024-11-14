@@ -47,6 +47,7 @@ public class DepartmentService {
         return Boolean.TRUE;
     }
 
+
     @Transactional
     public boolean deleteDepartment(Long departmentId) {
         Department department = departmentRepository.findById(departmentId)

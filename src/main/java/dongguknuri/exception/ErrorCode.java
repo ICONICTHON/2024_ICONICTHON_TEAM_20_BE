@@ -50,6 +50,7 @@ public enum ErrorCode {
     NOT_FOUND_BOARD(40414,HttpStatus.NOT_FOUND,"게시판을 찾을 수 없습니다."),
     NOT_FOUND_POINT_HISTORY(40415,HttpStatus.NOT_FOUND,"포인트 내역이 없습니다."),
     NOT_FOUND_REPLY(40416,HttpStatus.NOT_FOUND,"답글이 존재하지 않습니다"),
+    NOT_FOUND_COURSE(40417,HttpStatus.NOT_FOUND,"수업이 존재하지 않습니다."),
 
 
 
