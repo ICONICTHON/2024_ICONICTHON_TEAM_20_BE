@@ -51,20 +51,23 @@ public class User {
     private List<UserClub> userClubs = new ArrayList<>();
 
     @Builder
-    public User(String name, String email, String password, String department, String mbti, String personality,
-                int points) {
+    public User(String name, String email, String password, String department, String mbti, String personality) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.department = department;
         this.mbti = mbti;
         this.personality = personality;
-        this.points = points;
+        this.points = 0;
     }
 
     public void addClub(Club club) {
         UserClub userClub = new UserClub(this, club);
         userClubs.add(userClub);
         club.getUserClubs().add(userClub);
+    }
+
+    private void addPoint(int point) {
+        this.points += point;
     }
 }

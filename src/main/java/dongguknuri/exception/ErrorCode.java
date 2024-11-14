@@ -41,11 +41,13 @@ public enum ErrorCode {
     NOT_FOUND_MANAGER(40405, HttpStatus.NOT_FOUND, "매니저가 존재하지 않습니다"),
     NOT_FOUND_CLUB(40406, HttpStatus.NOT_FOUND, "동아리가 존재하지 않습니다"),
     NOT_FOUND_USERCLUB(40407, HttpStatus.NOT_FOUND, "해당 사용자는 이 동아리에 가입되어 있지 않습니다."),
-    NOT_FOUND_EVENT(40408,HttpStatus.NOT_FOUND,"이벤트를 찾을 수 없습니다"),
-    NOT_FOUND_DEPARTMENT(40409,HttpStatus.NOT_FOUND,"학과를 찾을 수 없습니다"),
-    NOT_FOUND_COMMENT(40410,HttpStatus.NOT_FOUND,"댓글이 존재하지 않습니다."),
-    NOT_FOUND_POST(40411,HttpStatus.NOT_FOUND,"게시글이 존재하지 않습니다"),
-
+    NOT_FOUND_EVENT(40408, HttpStatus.NOT_FOUND, "이벤트를 찾을 수 없습니다"),
+    NOT_FOUND_DEPARTMENT(40409, HttpStatus.NOT_FOUND, "학과를 찾을 수 없습니다"),
+    NOT_FOUND_COMMENT(40410, HttpStatus.NOT_FOUND, "댓글이 존재하지 않습니다."),
+    NOT_FOUND_POST(40411, HttpStatus.NOT_FOUND, "게시글이 존재하지 않습니다"),
+    ALREADY_EXISTS(40412, HttpStatus.NOT_FOUND, "이미 존재합니다."),
+    NOT_FOUND_LIKE(40413, HttpStatus.NOT_FOUND, "좋아요가 존재하지 않습니다."),
+    NOT_FOUND_BOARD(40414,HttpStatus.NOT_FOUND,"게시판을 찾을 수 없습니다."),
 
 
     //500

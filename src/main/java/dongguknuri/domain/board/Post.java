@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -40,19 +41,24 @@ public class Post {
     @JoinColumn(name = "board_id", nullable = false)
     private Board board;
 
-    @Column(name = "views")
-    private int views;
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
-    @Column(name = "likes")
-    private int likes;
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 
     @Builder
-    public Post(String title, String content, User user, Board board, int views, int likes) {
+    public Post(String title, String content, User user, Board board) {
         this.title = title;
         this.content = content;
         this.user = user;
         this.board = board;
-        this.views = views;
-        this.likes = likes;
+        this.createdAt = LocalDateTime.now();
+    }
+
+    public void updatePost(String title, String content) {
+        this.title = title;
+        this.content = content;
+        this.updatedAt = LocalDateTime.now();
     }
 }
