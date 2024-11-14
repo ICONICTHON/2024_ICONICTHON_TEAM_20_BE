@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDate;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -39,11 +40,20 @@ public class Course {
     @JoinColumn(name = "department_id")
     private Department department;
 
+    @Column(name = "start_time")
+    private LocalDate startTime;
+
+    @Column(name = "end_time")
+    private LocalDate endTime;
+
     @Builder
-    public Course(String name, String description, String professor, Department department) {
+    public Course(String name, String description, String professor, Department department,
+                  LocalDate startTime, LocalDate endTime) {
         this.name = name;
         this.description = description;
         this.professor = professor;
         this.department = department;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 }

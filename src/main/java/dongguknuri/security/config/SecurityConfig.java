@@ -34,10 +34,10 @@ public class SecurityConfig {
                 .cors().configurationSource(corsConfigurationSource()) // CORS 설정 활성화
                 .and()
                 .authorizeRequests() // 요청에 대한 보안 검사 시작
-                .requestMatchers("/api/auth/**")
+                .requestMatchers("*")
                 .permitAll() // 인증과 관련된 경로는 허용 (로그인, 회원가입 등)
-                .requestMatchers("/api/**").authenticated() // "/api/**" 경로의 요청은 JWT 인증이 필요
-                .anyRequest().authenticated() // 그 외의 모든 요청은 인증 필요
+//                .requestMatchers("/api/**").authenticated() // "/api/**" 경로의 요청은 JWT 인증이 필요
+//                .anyRequest().authenticated() // 그 외의 모든 요청은 인증 필요
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // 세션 상태를 STATELESS로 설정 (주로 JWT 사용시)
