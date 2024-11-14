@@ -1,22 +1,19 @@
-package dongguknuri.dto.response.board;
+package dongguknuri.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import lombok.Builder;
 
 @Builder
-public record PointHistoryResponseDto(
-        @JsonProperty("history_id") Long id,
+public record CreatePointDto(
         @JsonProperty("user_id") Long userId,
         @JsonProperty("points") int points
 ) implements Serializable {
-    public static PointHistoryResponseDto of(
-            final Long id,
+    public static CreatePointDto of(
             final Long userId,
             final int points
     ) {
-        return PointHistoryResponseDto.builder()
-                .id(id)
+        return CreatePointDto.builder()
                 .userId(userId)
                 .points(points)
                 .build();

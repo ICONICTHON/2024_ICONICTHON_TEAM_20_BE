@@ -1,4 +1,4 @@
-package dongguknuri.dto.request.user;
+package dongguknuri.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;

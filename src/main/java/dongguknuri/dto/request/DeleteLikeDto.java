@@ -1,21 +1,20 @@
-package dongguknuri.dto.request.board;
-
+package dongguknuri.dto.request;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import lombok.Builder;
 
 @Builder
-public record CreatePointDto(
+public record DeleteLikeDto(
         @JsonProperty("user_id") Long userId,
-        @JsonProperty("points") int points
+        @JsonProperty("post_id") Long postId
 ) implements Serializable {
-    public static CreatePointDto of(
+    public static DeleteLikeDto of(
             final Long userId,
-            final int points
+            final Long postId
     ) {
-        return CreatePointDto.builder()
+        return DeleteLikeDto.builder()
                 .userId(userId)
-                .points(points)
+                .postId(postId)
                 .build();
     }
 }

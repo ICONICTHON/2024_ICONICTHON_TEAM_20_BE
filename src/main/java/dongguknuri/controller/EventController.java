@@ -1,7 +1,7 @@
 package dongguknuri.controller;
 
 import dongguknuri.dto.global.ResponseDto;
-import dongguknuri.dto.request.event.CreateEventDto;
+import dongguknuri.dto.request.CreateEventDto;
 import dongguknuri.service.EventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;

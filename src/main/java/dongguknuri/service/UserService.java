@@ -1,13 +1,15 @@
 package dongguknuri.service;
 
 import dongguknuri.component.JwtTokenService;
+import dongguknuri.domain.Department;
 import dongguknuri.domain.User;
 import dongguknuri.dto.global.JwtResponseDto;
-import dongguknuri.dto.request.user.CreateUserDto;
-import dongguknuri.dto.request.user.UserLoginDto;
-import dongguknuri.dto.response.user.UserResponseDto;
+import dongguknuri.dto.request.CreateUserDto;
+import dongguknuri.dto.request.UserLoginDto;
+import dongguknuri.dto.response.UserResponseDto;
 import dongguknuri.exception.CommonException;
 import dongguknuri.exception.ErrorCode;
+import dongguknuri.repository.DepartmentRepository;
 import dongguknuri.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,17 +21,21 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final DepartmentRepository departmentRepository;
     private final JwtTokenService jwtTokenService;
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Transactional
     public UserResponseDto createUser(CreateUserDto createUserDto) {
         String encodedPassword = passwordEncoder.encode(createUserDto.password());
+        Department department = departmentRepository.findById(createUserDto.departmentId())
+                .orElseThrow(() -> new CommonException(ErrorCode.NOT_FOUND_DEPARTMENT));
+
         User save = userRepository.save(User.builder()
                 .name(createUserDto.name())
                 .email(createUserDto.email())
                 .password(encodedPassword)
-                .department(createUserDto.department())
+                .department(department)
                 .mbti(createUserDto.mbti())
                 .personality(createUserDto.personality())
                 .build()

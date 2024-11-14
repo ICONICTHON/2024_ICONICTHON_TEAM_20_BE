@@ -1,24 +1,24 @@
-package dongguknuri.dto.response.board;
+package dongguknuri.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import lombok.Builder;
 
 @Builder
-public record LikeResponseDto(
-        @JsonProperty("like_id") Long id,
+public record PointHistoryResponseDto(
+        @JsonProperty("history_id") Long id,
         @JsonProperty("user_id") Long userId,
-        @JsonProperty("post_id") Long postId
+        @JsonProperty("points") int points
 ) implements Serializable {
-    public static LikeResponseDto of(
+    public static PointHistoryResponseDto of(
             final Long id,
             final Long userId,
-            final Long postId
+            final int points
     ) {
-        return LikeResponseDto.builder()
+        return PointHistoryResponseDto.builder()
                 .id(id)
                 .userId(userId)
-                .postId(postId)
+                .points(points)
                 .build();
     }
 }

@@ -3,8 +3,8 @@ package dongguknuri.service;
 import dongguknuri.domain.User;
 import dongguknuri.domain.board.Comment;
 import dongguknuri.domain.board.Post;
-import dongguknuri.dto.request.board.CreateCommentDto;
-import dongguknuri.dto.response.board.CommentResponseDto;
+import dongguknuri.dto.request.CreateCommentDto;
+import dongguknuri.dto.response.CommentResponseDto;
 import dongguknuri.exception.CommonException;
 import dongguknuri.exception.ErrorCode;
 import dongguknuri.repository.UserRepository;
@@ -29,7 +29,7 @@ public class CommentService {
         Post post = postRepository.findById(postId)
                 .orElseThrow(() -> new CommonException(ErrorCode.NOT_FOUND_POST));
 
-        return commentRepository.findByPost(post.getPostId()).stream()
+        return commentRepository.findByPost(post).stream()
                 .map(comment -> CommentResponseDto.of(
                         comment.getCommentId(),
                         comment.getContent(),

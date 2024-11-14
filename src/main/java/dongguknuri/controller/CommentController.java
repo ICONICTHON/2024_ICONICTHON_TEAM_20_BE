@@ -1,7 +1,7 @@
 package dongguknuri.controller;
 
 import dongguknuri.dto.global.ResponseDto;
-import dongguknuri.dto.request.board.CreateCommentDto;
+import dongguknuri.dto.request.CreateCommentDto;
 import dongguknuri.service.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

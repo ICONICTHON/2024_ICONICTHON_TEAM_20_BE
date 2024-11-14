@@ -1,21 +1,21 @@
-package dongguknuri.dto.request.board;
+package dongguknuri.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import lombok.Builder;
 
 @Builder
-public record CreateBoardDto(
+public record UserResponseDto(
         @JsonProperty("name") String name,
-        @JsonProperty("description") String description
+        @JsonProperty("email") String email
 ) implements Serializable {
-    public static CreateBoardDto of(
+    public static UserResponseDto of(
             final String name,
-            final String description
+            final String email
     ) {
-        return CreateBoardDto.builder()
+        return UserResponseDto.builder()
                 .name(name)
-                .description(description)
+                .email(email)
                 .build();
     }
 }

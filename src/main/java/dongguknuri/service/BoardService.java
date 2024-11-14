@@ -1,9 +1,8 @@
 package dongguknuri.service;
 
 import dongguknuri.domain.board.Board;
-import dongguknuri.dto.request.board.CreateBoardDto;
-import dongguknuri.dto.response.board.BoardResponseDto;
-import dongguknuri.repository.UserRepository;
+import dongguknuri.dto.request.CreateBoardDto;
+import dongguknuri.dto.response.BoardResponseDto;
 import dongguknuri.repository.board.BoardRepository;
 import java.util.List;
 import java.util.stream.Collectors;

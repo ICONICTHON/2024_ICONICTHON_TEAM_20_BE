@@ -1,8 +1,8 @@
 package dongguknuri.controller;
 
 import dongguknuri.dto.global.ResponseDto;
-import dongguknuri.dto.request.board.CreateLikeDto;
-import dongguknuri.dto.request.board.DeleteLikeDto;
+import dongguknuri.dto.request.CreateLikeDto;
+import dongguknuri.dto.request.DeleteLikeDto;
 import dongguknuri.service.LikeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;

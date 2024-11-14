@@ -52,6 +52,7 @@ public enum ErrorCode {
     NOT_FOUND_REPLY(40416,HttpStatus.NOT_FOUND,"답글이 존재하지 않습니다"),
 
 
+
     //500
     INTERNAL_SERVER_ERROR(50000, HttpStatus.INTERNAL_SERVER_ERROR, "서버 내부 오류입니다");
 

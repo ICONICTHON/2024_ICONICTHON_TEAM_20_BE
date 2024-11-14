@@ -1,7 +1,7 @@
 package dongguknuri.controller;
 
 import dongguknuri.dto.global.ResponseDto;
-import dongguknuri.dto.request.board.CreatePointDto;
+import dongguknuri.dto.request.CreatePointDto;
 import dongguknuri.service.PointHistoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -2,8 +2,8 @@ package dongguknuri.service;
 
 import dongguknuri.domain.User;
 import dongguknuri.domain.board.PointHistory;
-import dongguknuri.dto.request.board.CreatePointDto;
-import dongguknuri.dto.response.board.PointHistoryResponseDto;
+import dongguknuri.dto.request.CreatePointDto;
+import dongguknuri.dto.response.PointHistoryResponseDto;
 import dongguknuri.exception.CommonException;
 import dongguknuri.exception.ErrorCode;
 import dongguknuri.repository.UserRepository;

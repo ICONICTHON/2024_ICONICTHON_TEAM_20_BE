@@ -1,4 +1,4 @@
-package dongguknuri.dto.request.user;
+package dongguknuri.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
@@ -9,7 +9,7 @@ public record CreateUserDto(
         @JsonProperty("name") String name,
         @JsonProperty("email") String email,
         @JsonProperty("password") String password,
-        @JsonProperty("department") String department,
+        @JsonProperty("department_id") Long departmentId,
         @JsonProperty("mbti") String mbti,
         @JsonProperty("personality") String personality
 ) implements Serializable {
@@ -17,7 +17,7 @@ public record CreateUserDto(
             final String name,
             final String email,
             final String password,
-            final String department,
+            final Long departmentId,
             final String mbti,
             final String personality
     ) {
@@ -25,7 +25,7 @@ public record CreateUserDto(
                 .name(name)
                 .email(email)
                 .password(password)
-                .department(department)
+                .departmentId(departmentId)
                 .mbti(mbti)
                 .personality(personality)
                 .build();

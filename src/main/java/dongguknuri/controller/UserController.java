@@ -2,8 +2,8 @@ package dongguknuri.controller;
 
 import dongguknuri.dto.global.AuthenticationResponse;
 import dongguknuri.dto.global.ResponseDto;
-import dongguknuri.dto.request.user.CreateUserDto;
-import dongguknuri.dto.request.user.UserLoginDto;
+import dongguknuri.dto.request.CreateUserDto;
+import dongguknuri.dto.request.UserLoginDto;
 import dongguknuri.exception.CommonException;
 import dongguknuri.exception.ErrorCode;
 import dongguknuri.service.UserService;

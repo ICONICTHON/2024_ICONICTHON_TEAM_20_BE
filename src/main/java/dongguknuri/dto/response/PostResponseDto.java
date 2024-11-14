@@ -1,4 +1,4 @@
-package dongguknuri.dto.response.board;
+package dongguknuri.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;

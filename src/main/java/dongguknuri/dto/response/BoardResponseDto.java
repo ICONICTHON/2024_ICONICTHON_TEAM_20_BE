@@ -1,22 +1,22 @@
-package dongguknuri.dto.response.club;
+package dongguknuri.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import lombok.Builder;
 
 @Builder
-public record ClubResponseDto(
-        @JsonProperty("club_id") Long clubId,
+public record BoardResponseDto(
+        @JsonProperty("board_id") Long id,
         @JsonProperty("name") String name,
         @JsonProperty("description") String description
 ) implements Serializable {
-    public static ClubResponseDto of(
-            final Long clubId,
+    public static BoardResponseDto of(
+            final Long id,
             final String name,
             final String description
     ) {
-        return ClubResponseDto.builder()
-                .clubId(clubId)
+        return BoardResponseDto.builder()
+                .id(id)
                 .name(name)
                 .description(description)
                 .build();

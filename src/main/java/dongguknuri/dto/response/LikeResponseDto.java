@@ -1,19 +1,22 @@
-package dongguknuri.dto.request.board;
+package dongguknuri.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import lombok.Builder;
 
 @Builder
-public record CreateLikeDto(
+public record LikeResponseDto(
+        @JsonProperty("like_id") Long id,
         @JsonProperty("user_id") Long userId,
         @JsonProperty("post_id") Long postId
 ) implements Serializable {
-    public static CreateLikeDto of(
+    public static LikeResponseDto of(
+            final Long id,
             final Long userId,
             final Long postId
     ) {
-        return CreateLikeDto.builder()
+        return LikeResponseDto.builder()
+                .id(id)
                 .userId(userId)
                 .postId(postId)
                 .build();

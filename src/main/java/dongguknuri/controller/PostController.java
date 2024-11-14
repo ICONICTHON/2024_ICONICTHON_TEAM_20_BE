@@ -1,8 +1,8 @@
 package dongguknuri.controller;
 
 import dongguknuri.dto.global.ResponseDto;
-import dongguknuri.dto.request.board.CreatePostDto;
-import dongguknuri.dto.request.board.UpdatePostDto;
+import dongguknuri.dto.request.CreatePostDto;
+import dongguknuri.dto.request.UpdatePostDto;
 import dongguknuri.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
