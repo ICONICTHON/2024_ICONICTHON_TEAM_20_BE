@@ -1,0 +1,4 @@
+[submodule "dongguknuri-properties"]
+	path = dongguknuri-properties
+	url = https://github.com/shinnyriver/dongguknuri-properties.git
+	branch = main
