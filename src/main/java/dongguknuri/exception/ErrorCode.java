@@ -41,6 +41,8 @@ public enum ErrorCode {
     NOT_FOUND_MANAGER(40405, HttpStatus.NOT_FOUND, "매니저가 존재하지 않습니다"),
     NOT_FOUND_CLUB(40406, HttpStatus.NOT_FOUND, "동아리가 존재하지 않습니다"),
     NOT_FOUND_USERCLUB(40407, HttpStatus.NOT_FOUND, "해당 사용자는 이 동아리에 가입되어 있지 않습니다."),
+    NOT_FOUND_EVENT(40408,HttpStatus.NOT_FOUND,"이벤트를 찾을 수 없습니다"),
+    NOT_FOUND_DEPARTMENT(40409,HttpStatus.NOT_FOUND,"학과를 찾을 수 없습니다"),
 
 
     //500

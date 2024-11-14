@@ -35,9 +35,6 @@ public class Event {
     @Column(name = "date", nullable = false)
     private LocalDate date;
 
-    @Column(name = "type")
-    private String type;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
     private Department department;
@@ -47,11 +44,10 @@ public class Event {
     private Club club;
 
     @Builder
-    public Event(String title, String description, LocalDate date, String type, Department department, Club club) {
+    public Event(String title, String description, LocalDate date, Department department, Club club) {
         this.title = title;
         this.description = description;
         this.date = date;
-        this.type = type;
         this.department = department;
         this.club = club;
     }
