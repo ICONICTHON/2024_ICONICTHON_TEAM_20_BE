@@ -24,7 +24,7 @@ public class UserClubService {
     private final ClubRepository clubRepository;
     private final UserClubRepository userClubRepository;
 
-    @Transactional
+    @Transactional(readOnly = true)
     public List<ClubResponseDto> getAllClubs() {
         return clubRepository.findAll().stream()
                 .map(club -> ClubResponseDto.of(
@@ -51,7 +51,7 @@ public class UserClubService {
         return Boolean.TRUE;
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public List<ClubResponseDto> getUserClubs(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new CommonException(ErrorCode.NOT_FOUND_USER));
