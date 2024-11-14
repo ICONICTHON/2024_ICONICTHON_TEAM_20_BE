@@ -48,6 +48,7 @@ public enum ErrorCode {
     ALREADY_EXISTS(40412, HttpStatus.NOT_FOUND, "이미 존재합니다."),
     NOT_FOUND_LIKE(40413, HttpStatus.NOT_FOUND, "좋아요가 존재하지 않습니다."),
     NOT_FOUND_BOARD(40414,HttpStatus.NOT_FOUND,"게시판을 찾을 수 없습니다."),
+    NOT_FOUND_POINT_HISTORY(40415,HttpStatus.NOT_FOUND,"포인트 내역이 없습니다."),
 
 
     //500
