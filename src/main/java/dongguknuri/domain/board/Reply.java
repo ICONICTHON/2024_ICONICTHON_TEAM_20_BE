@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -37,10 +38,14 @@ public class Reply {
     @JoinColumn(name = "comment_id", nullable = false)
     private Comment comment;
 
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
     @Builder
     public Reply(String content, User user, Comment comment) {
         this.content = content;
         this.user = user;
         this.comment = comment;
+        this.createdAt = LocalDateTime.now();
     }
 }
