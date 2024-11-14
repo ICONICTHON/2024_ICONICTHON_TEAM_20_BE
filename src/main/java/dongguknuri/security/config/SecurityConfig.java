@@ -1,5 +1,6 @@
 package dongguknuri.security.config;
 
+import dongguknuri.component.JwtRequestFilter;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.context.annotation.Bean;
@@ -33,7 +34,7 @@ public class SecurityConfig {
                 .cors().configurationSource(corsConfigurationSource()) // CORS 설정 활성화
                 .and()
                 .authorizeRequests() // 요청에 대한 보안 검사 시작
-                .requestMatchers("/api/oauth/**", "/api/managers/login", "/api/managers/register")
+                .requestMatchers("/api/auth/**")
                 .permitAll() // 인증과 관련된 경로는 허용 (로그인, 회원가입 등)
                 .requestMatchers("/api/**").authenticated() // "/api/**" 경로의 요청은 JWT 인증이 필요
                 .anyRequest().authenticated() // 그 외의 모든 요청은 인증 필요
@@ -49,7 +50,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(
-                List.of("https://api.ice-taba.site", "https://www.ice-taba.site")); // 허용할 도메인 설정
+                List.of("*")); // 허용할 도메인 설정
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // 허용할 HTTP 메소드 설정
         configuration.setAllowedHeaders(List.of("*")); // 모든 헤더 허용
         configuration.setAllowCredentials(true); // 크리덴셜 허용

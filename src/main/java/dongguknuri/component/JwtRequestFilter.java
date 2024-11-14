@@ -1,6 +1,5 @@
-package dongguknuri.security.config;
+package dongguknuri.component;
 
-import dongguknuri.component.JwtTokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
