@@ -6,6 +6,7 @@ build/
 !**/src/test/**/build/
 .idea
 application-local.yml
+application-prod.yml
 
 ### STS ###
 .apt_generated
